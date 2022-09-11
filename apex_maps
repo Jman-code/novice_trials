@@ -1,0 +1,58 @@
+import random
+
+from time import sleep
+
+def loc_find(map):
+    y = random.choice(map)
+    b = y.title()
+    map.remove(y)
+    w = random.choice(map)
+    z = w.title()
+    print(f'Land on {z} or {b}. Good hunting!')
+    print('*' * 50)
+    sleep(4)
+
+def landing():
+    while True:
+        print(' Worlds Edge: 1\n Kings Canyon:2\n Storm Point: 3\n Olympus:     4\n To Exit:  Any Key')
+        x = input(str('Enter the map: '))
+        if x == '1':
+            loc_find(worlds_edge)
+        elif x == '2':
+           loc_find(kings_canyon)
+        elif x == '3':
+           loc_find(storm_point)
+        elif x == '4':
+            loc_find(olympus)
+        else:
+            break
+    
+worlds_edge = [
+    'trials', 'skyhook', 'survey camp', 'refinery', 'drill site',
+    'fragment west', 'epicenter', 'overlook', 'lava fissure', 'trainyard',
+    'fragment east', 'harvester', 'geyser', 'thetree',
+    'sorting factory', 'lava city', 'the dome', 'hotspot' 
+    ]
+
+kings_canyon = [
+     'slum lakes', 'artillery', 'the pit', 'containment', 'capacitor',
+     'the rig', 'runoff', 'bunker', 'the cage', 'labs', 'swamps', 'airbase',
+     'market', 'hydro dam', 'gauntlet', 'salvage', 'repulsor', 'water treatment',
+     'hotspot'
+    ]
+
+storm_point = [
+    'north pad', 'the wall', 'highpoint', 'lightning rod', 'checkpoint',
+    'command center', 'thunderwatch', 'the mill', 'cascade falls', 'barometer',
+    'storm catcher', 'launchpad', 'fish farms', 'gale station', 'cenote cave',
+    'ship fall', 'antenna', 'hotspot'
+    ]
+
+olympus = [
+    'docks', 'carrier', 'power grid', 'rift', 'gardens', 'oasis', 'estates',
+    'fight night', 'energy depot', 'hammond labs', 'grow tower', 'elysium',
+    'hydroponics', 'solar array', 'orbital cannon', 'icarus', 'bonsai plaza',
+    'hotspot'
+    ]
+
+landing()
